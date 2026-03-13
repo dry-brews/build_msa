@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:hmmer-web-docs.readthedocs.io)",
+      "WebFetch(domain:www.ebi.ac.uk)",
+      "Bash(curl -s \"https://www.ebi.ac.uk/Tools/hmmer/api/v1/openapi.json\")"
+    ]
+  }
+}
