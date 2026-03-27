@@ -13,7 +13,7 @@ set -euo pipefail
 # Config
 # ---------------------------------------------------------------------------
 API_BASE="https://www.ebi.ac.uk/Tools/hmmer/api/v1"
-DATABASE="pdb"
+DATABASE="uniprot"
 ITERATIONS=5
 POLL_INTERVAL=60    # seconds between status checks
 MAX_WAIT=21600      # give up after 6 hours

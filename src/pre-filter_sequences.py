@@ -50,7 +50,7 @@ def main():
 
         # Strip commas out of headers
         if ',' in header:
-            header.replace("," "")
+            header.replace(",", "")
             comma_count +=1
         
         # If all seq chars are uppercase aa's, good to print
