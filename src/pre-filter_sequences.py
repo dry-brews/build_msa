@@ -53,10 +53,10 @@ def main():
 
         # Strip commas and spaces out of headers
         if ',' in header:
-            header.replace(",", "")
+            header = header.replace(",", "")
             comma_count +=1
         if ' ' in header:
-            header.replace(' ', '_')
+            header = header.replace(' ', '_')
             space_count +=1
         
         # If all seq chars are uppercase aa's, good to print
