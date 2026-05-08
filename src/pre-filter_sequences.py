@@ -34,6 +34,7 @@ def main():
 
     unique_seqs = set()
     comma_count     = 0
+    space_count     = 0
     coerce_count    = 0
     print_count     = 0
     failure_count   = 0
@@ -48,10 +49,13 @@ def main():
             continue
         unique_seqs.add(seq)
 
-        # Strip commas out of headers
+        # Strip commas and spaces out of headers
         if ',' in header:
             header.replace(",", "")
             comma_count +=1
+        if ' ' in header:
+            header.replace(' ', '_')
+            space_count +=1
         
         # If all seq chars are uppercase aa's, good to print
         if set(seq) <= aa_chars:
@@ -83,6 +87,7 @@ def main():
     sys.stderr.write("%s sequences written\n" % print_count)
     sys.stderr.write("%s nonunique sequences skipped\n" % nonunique_count)
     sys.stderr.write("%s commas stripped from headers\n" % comma_count)
+    sys.stderr.write("%s spaces stripped from headers\n" % space_count)
     sys.stderr.write("%s sequences coerced to a valid format by degapping or uppercasing\n" % coerce_count)
 
     if len(invalid_chars) > 0:
