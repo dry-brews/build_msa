@@ -32,7 +32,8 @@ def read_fasta(filename):
 def main():
     invalid_chars = set()
 
-    unique_seqs = set()
+    unique_seqs     = set()
+    unique_headers  = set()
     comma_count     = 0
     space_count     = 0
     coerce_count    = 0
@@ -44,10 +45,11 @@ def main():
 
     for i, (header, seq) in enumerate(seqs.items()):
         # Skip sequences already observed
-        if seq in unique_seqs:
+        if seq in unique_seqs or header in unique_headers:
             nonunique_count +=1
             continue
         unique_seqs.add(seq)
+        unique_headers.add(header)
 
         # Strip commas and spaces out of headers
         if ',' in header:
